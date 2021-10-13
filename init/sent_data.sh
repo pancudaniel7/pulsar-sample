@@ -5,7 +5,7 @@ tenant="test"
 namespace="namespace1"
 topic="topic1"
 
-container_id="$(docker ps | grep apachepulsar/pulsar:2.7.0 | cut -d" " -f1)"
+container_id="$(docker ps | grep apachepulsar/pulsar:2.7.1 | cut -d" " -f1)"
 
 function sent_data() {
   limit=${1:-4}

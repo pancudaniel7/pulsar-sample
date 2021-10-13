@@ -6,7 +6,7 @@ cluster="test1"
 namespace="namespace1"
 topic="topic1"
 
-container_id="$(docker ps | grep apachepulsar/pulsar:2.7.0 | cut -d" " -f1)" &&
+container_id="$(docker ps | grep apachepulsar/pulsar:2.7.1 | cut -d" " -f1)" &&
     docker exec -it "$container_id" $pulsar_client_path/pulsar-admin tenants create $tenant &&
     echo "Created tenant: $tenant"
 
