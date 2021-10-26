@@ -4,7 +4,7 @@ pulsar_client_path="./bin"
 tenant="public"
 namespace="default"
 
-container_id="$(docker ps | grep apachepulsar/pulsar:2.7.1 | cut -d" " -f1)"
+container_id="$(kubectl get pods | grep toolset | cut -d" " -f1)"
 
 function sent_data() {
   limit=${1:-4}
@@ -13,9 +13,9 @@ function sent_data() {
     topic_suffix=${topics_suffix[topic_suffix_index]}
 
     topic_name="${2:-t1}"
-    docker exec -it "$container_id" "$pulsar_client_path"/pulsar-client produce "$tenant/$namespace/$topic_name" -m \
-      "\"customerNumber\":\"100$i\"" \
-      -n 1 && \
+    kubectl exec -it "$container_id" "$pulsar_client_path"/pulsar-client produce "$tenant/$namespace/$topic_name" \
+      -m "Test message <----<"
+      -n 1 &&
     echo "Sent: $((i + 1)) to $topic_name"
   done
 }

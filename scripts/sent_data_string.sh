@@ -14,8 +14,8 @@ function sent_data() {
 
     topic_name="${2:-t1}"
     docker exec -it "$container_id" "$pulsar_client_path"/pulsar-client produce "$tenant/$namespace/$topic_name" \
-      -m "Test message <----<"
-      -n 1
+      -m "Test message <----<" \
+      -n 1 && \
     echo "Sent: $((i + 1)) to $topic_name"
   done
 }
