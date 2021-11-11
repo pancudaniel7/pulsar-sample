@@ -7,7 +7,7 @@ services:
       - "8181:8080"
       - "6650:6650"
     volumes:
-      - $HOME/workspace/pulsar-sample/init/data:/pulsar/data
+      - $HOME/workspace/pulsar-sample/data:/pulsar/data
       - $HOME/workspace/pulsar-sample/functions:/tmp/pulsar/functions
     environment:
       - BOOKIE_MEM=" -Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g"

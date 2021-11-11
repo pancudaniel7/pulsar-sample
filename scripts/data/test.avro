@@ -1,6 +1,0 @@
-{
-"type": "AVRO",
-"schema":
-"{\"name\":\"InvestigationResultAmlV1\",\"type\":\"record\",\"fields\":[{\"name\":\"customerNumber\",\"type\":\"string\"},{\"name\":\"eventId\",\"type\":[\"null\",\"string\"]},{\"name\":\"investigationComment\",\"type\":[\"null\",\"string\"]},{\"name\":\"investigationStatus\",\"type\":[\"null\",\"string\"]},{\"name\":\"lastInvestigator\",\"type\":[\"null\",\"string\"]},{\"name\":\"lastUpdateTS\",\"type\":[\"null\",\"string\"]}]}",
-"properties":{"schemaResponsible":"Agile Delivery Compliance","topicDescription":"This Schema contains all compliance retail entities ","url":"https://wiki.rbinternational.corp/confluence/display/ADC/Agile+Delivery+Compliance?src=sidebar","fieldDescription":"[{\"customerNumber\":\"Customer Number\"},{\"alertId\":\"AlertId\"},{\"matchUniqueId\":\"Unique id based on sceening-result-wlm/pep/fisa \"},{\"investigationStatus\":\"Investigation Status AML\"},{\"investigationComment\":\"Investigation comments\"}]"}
-}
