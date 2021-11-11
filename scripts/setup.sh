@@ -7,8 +7,9 @@ namespace="default"
 topic="t1"
 topic2="o2"
 
-container_id="$(docker ps | grep apachepulsar/pulsar:2.7.1 | cut -d" " -f1)" &&
-    docker exec -it "$container_id" $pulsar_client_path/pulsar-admin tenants create $tenant &&
+container_id="$(docker ps | grep apachepulsar/pulsar:2.7.1 | cut -d" " -f1)"
+
+docker exec -it "$container_id" $pulsar_client_path/pulsar-admin tenants create $tenant &&
     echo "Created tenant: $tenant"
 
 # docker exec -it "$container_id" $pulsar_client_path/pulsar-admin namespaces create "$tenant/$namespace" &&

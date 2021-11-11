@@ -10,6 +10,11 @@ log_topic="l1"
 function_name="FirstFunction"
 module_name="first"
 
+docker exec -it $container_id ./bin/pulsar-admin functions delete \
+    --tenant $tenant \
+    --namespace $namespace \
+    --name $function_name
+
 docker exec -it $container_id ./bin/pulsar-admin functions create \
     --py /tmp/pulsar/functions/$module_name.py \
     --classname $module_name.$function_name \
