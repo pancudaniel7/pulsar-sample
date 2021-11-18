@@ -9,6 +9,7 @@ topic2="o2"
 log_topic="l1"
 function_name="FirstFunction"
 module_name="first"
+py_functions_path="/tmp/pulsar/functions/python/"
 
 docker exec -it $container_id ./bin/pulsar-admin functions delete \
     --tenant $tenant \
@@ -16,7 +17,7 @@ docker exec -it $container_id ./bin/pulsar-admin functions delete \
     --name $function_name
 
 docker exec -it $container_id ./bin/pulsar-admin functions create \
-    --py /tmp/pulsar/functions/$module_name.py \
+    --py $py_functions_path$module_name.py \
     --classname $module_name.$function_name \
     --tenant $tenant \
     --namespace $namespace \
