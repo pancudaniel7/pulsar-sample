@@ -9,6 +9,7 @@ services:
     volumes:
       - $HOME/workspace/pulsar-sample/data:/pulsar/data
       - $HOME/workspace/pulsar-sample/functions/python:/tmp/pulsar/functions/python
+      - $HOME/workspace/python-pulsar-extended-logger/dist/:/tmp/python-pulsar-extended-logger/dist
     environment:
       - BOOKIE_MEM=" -Xms512m -Xmx512m -XX:MaxDirectMemorySize=1g"
     command: >

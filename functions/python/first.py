@@ -5,6 +5,7 @@ class FirstFunction(Function):
         pass
 
     def process(self, input, context):
-        logger = context.get_logger()        
+        logger = context.get_logger()     
         context.publish("persistent://public/default/o1", input)
         logger.info("Test logging data <----<")
+        logger.info("Context type: " + type(context).__name__)
